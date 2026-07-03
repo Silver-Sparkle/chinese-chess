@@ -1,0 +1,130 @@
+/* 房间页面 */
+.page-header {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+/* 创建行 */
+.create-row {
+  display: flex;
+  gap: 16rpx;
+  align-items: center;
+}
+
+.room-input {
+  flex: 1;
+  height: 80rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  background: #fafafa;
+}
+
+.create-btn {
+  width: 120rpx;
+  height: 80rpx !important;
+  margin: 0 !important;
+  font-size: 28rpx !important;
+}
+
+/* 列表 */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-btn {
+  font-size: 24rpx;
+  color: #8B4513;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 60rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.empty-sub {
+  display: block;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+/* 房间项 */
+.room-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.room-item:last-child {
+  border-bottom: none;
+}
+
+.room-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.room-players {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.join-btn {
+  width: 120rpx !important;
+  height: 64rpx !important;
+  font-size: 26rpx !important;
+  margin: 0 !important;
+}
+
+/* 我的房间 */
+.my-room {
+  border: 2rpx solid #8B4513;
+}
+
+.room-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 16rpx 0;
+}
+
+.room-id {
+  font-size: 24rpx;
+  color: #999;
+  font-family: monospace;
+}
+
+.room-actions {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 16rpx;
+}
+
+.room-actions .btn {
+  flex: 1;
+}

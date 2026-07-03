@@ -1,0 +1,60 @@
+<!-- 对局记录 -->
+<view class="container">
+  <view class="page-header">
+    <text class="title">📋 对局记录</text>
+    <text class="subtitle">历史对局回顾</text>
+  </view>
+
+  <!-- 统计概览 -->
+  <view class="stats-card card">
+    <view class="stat-item">
+      <text class="stat-num">{{stats.total}}</text>
+      <text class="stat-label">总局数</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num win">{{stats.wins}}</text>
+      <text class="stat-label">胜</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num lose">{{stats.losses}}</text>
+      <text class="stat-label">负</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{stats.draws}}</text>
+      <text class="stat-label">和</text>
+    </view>
+  </view>
+
+  <!-- 记录列表 -->
+  <view wx:if="{{records.length === 0}}" class="empty-tip">
+    <text>暂无对局记录</text>
+    <text class="empty-sub">开始一局对弈吧</text>
+  </view>
+
+  <view wx:for="{{records}}" wx:key="game_id" class="record-item card">
+    <view class="record-header">
+      <view class="record-type">
+        <text class="type-badge {{item.game_type}}">{{item.game_type === 'ai' ? '人机' : '联机'}}</text>
+      </view>
+      <text class="record-date">{{item.date}}</text>
+    </view>
+
+    <view class="record-players">
+      <text class="player red">🔴 {{item.red_player || '红方'}}</text>
+      <text class="vs">VS</text>
+      <text class="player black">⚫ {{item.black_player || '黑方'}}</text>
+    </view>
+
+    <view class="record-result">
+      <text class="result-text {{item.result_class}}">{{item.result_text}}</text>
+      <text class="result-reason">{{item.reason}}</text>
+    </view>
+
+    <view class="record-meta">
+      <text>共 {{item.total_moves}} 手</text>
+    </view>
+  </view>
+</view>

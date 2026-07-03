@@ -1,0 +1,149 @@
+/* 首页样式 */
+.title-area {
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+}
+
+.logo-area {
+  margin: 30rpx 0;
+}
+
+.mini-board {
+  width: 200rpx;
+  height: 220rpx;
+  background: #DEB887;
+  border-radius: 16rpx;
+  border: 4rpx solid #8B4513;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-bg {
+  width: 160rpx;
+  height: 180rpx;
+  background: repeating-linear-gradient(
+    0deg, #C4A46C 0px, #C4A46C 1rpx, #DEB887 1rpx, #DEB887 40rpx
+  ),
+  repeating-linear-gradient(
+    90deg, #C4A46C 0px, #C4A46C 1rpx, #DEB887 1rpx, #DEB887 36rpx
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+}
+
+.board-char {
+  font-size: 60rpx;
+  color: #8B4513;
+  font-weight: bold;
+}
+
+/* 菜单卡片 */
+.menu-card {
+  width: 100%;
+  padding: 30rpx;
+}
+
+.menu-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.menu-btn {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+  padding: 24rpx !important;
+  border-radius: 16rpx !important;
+  margin: 12rpx 0 !important;
+}
+
+.menu-icon {
+  font-size: 48rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.menu-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.menu-label {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.menu-desc {
+  font-size: 22rpx;
+  opacity: 0.7;
+  margin-top: 4rpx;
+}
+
+/* 难度选择 */
+.difficulty-card {
+  width: 100%;
+  padding: 24rpx 30rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.difficulty-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.diff-item {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  border-radius: 12rpx;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 26rpx;
+  transition: all 0.2s;
+}
+
+.diff-item.active {
+  background: #8B4513;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 连接状态 */
+.status-bar {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.status-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+}
+
+.status-dot.online {
+  background: #27ae60;
+}
+
+.status-dot.offline {
+  background: #e74c3c;
+}

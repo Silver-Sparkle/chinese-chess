@@ -1,0 +1,74 @@
+<!-- 联机对战房间 -->
+<view class="container">
+  <view class="page-header">
+    <text class="title">👥 联机对战</text>
+    <text class="subtitle">与好友实时对弈</text>
+  </view>
+
+  <!-- 创建房间 -->
+  <view class="card">
+    <text class="section-title">创建房间</text>
+    <view class="create-row">
+      <input
+        class="room-input"
+        placeholder="输入房间名称（可选）"
+        value="{{roomName}}"
+        bindinput="onNameInput"
+        maxlength="20"
+      />
+      <button class="btn btn-primary create-btn" bindtap="createRoom">
+        创建
+      </button>
+    </view>
+  </view>
+
+  <!-- 房间列表 -->
+  <view class="card">
+    <view class="list-header">
+      <text class="section-title">房间列表</text>
+      <button class="refresh-btn" bindtap="refreshRooms">刷新</button>
+    </view>
+
+    <view wx:if="{{rooms.length === 0}}" class="empty-tip">
+      <text>暂无可用房间</text>
+      <text class="empty-sub">创建一个房间等待好友加入吧</text>
+    </view>
+
+    <view wx:for="{{rooms}}" wx:key="room_id" class="room-item">
+      <view class="room-info">
+        <text class="room-name">{{item.name || '未命名房间'}}</text>
+        <text class="room-players">{{item.players.length}}/{{item.max_players}}人</text>
+      </view>
+      <button
+        class="btn btn-primary join-btn"
+        bindtap="joinRoom"
+        data-room-id="{{item.room_id}}"
+      >
+        加入
+      </button>
+    </view>
+  </view>
+
+  <!-- 我的房间 -->
+  <view wx:if="{{myRoom}}" class="card my-room">
+    <text class="section-title">我的房间</text>
+    <view class="room-detail">
+      <text class="room-name">{{myRoom.name || '未命名'}}</text>
+      <text class="room-id">ID: {{myRoom.room_id}}</text>
+      <text class="room-players">{{myRoom.players.length}}/{{myRoom.max_players}}人</text>
+    </view>
+
+    <view class="room-actions">
+      <button
+        wx:if="{{myRoom.created_by === playerId && myRoom.players.length >= 2}}"
+        class="btn btn-primary"
+        bindtap="startGame"
+      >
+        开始对局
+      </button>
+      <button class="btn btn-danger" bindtap="leaveRoom">
+        离开房间
+      </button>
+    </view>
+  </view>
+</view>

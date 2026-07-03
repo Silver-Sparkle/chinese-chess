@@ -1,0 +1,82 @@
+<!-- 首页 -->
+<view class="container">
+  <!-- 标题 -->
+  <view class="title-area">
+    <text class="title">🀄 中国象棋</text>
+    <text class="subtitle">楚河汉界 · 运筹帷幄</text>
+  </view>
+
+  <!-- 棋盘图标 -->
+  <view class="logo-area">
+    <view class="mini-board">
+      <view class="board-bg">
+        <text class="board-char">帅</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 模式选择 -->
+  <view class="menu-card card">
+    <view class="menu-title">选择模式</view>
+
+    <!-- 人机对战 -->
+    <button class="btn btn-primary menu-btn" bindtap="startAIGame" data-color="red">
+      <text class="menu-icon">🤖</text>
+      <view class="menu-text">
+        <text class="menu-label">人机对战（执红）</text>
+        <text class="menu-desc">与AI对弈，你执红先手</text>
+      </view>
+    </button>
+
+    <button class="btn btn-primary menu-btn" bindtap="startAIGame" data-color="black">
+      <text class="menu-icon">🧠</text>
+      <view class="menu-text">
+        <text class="menu-label">人机对战（执黑）</text>
+        <text class="menu-desc">AI执红先手，挑战难度</text>
+      </view>
+    </button>
+
+    <!-- 联机对战 -->
+    <button class="btn btn-secondary menu-btn" bindtap="goToRoom">
+      <text class="menu-icon">👥</text>
+      <view class="menu-text">
+        <text class="menu-label">联机对战</text>
+        <text class="menu-desc">与好友实时对弈</text>
+      </view>
+    </button>
+
+    <!-- 对局记录 -->
+    <button class="btn btn-secondary menu-btn" bindtap="goToHistory">
+      <text class="menu-icon">📋</text>
+      <view class="menu-text">
+        <text class="menu-label">对局记录</text>
+        <text class="menu-desc">查看历史对局</text>
+      </view>
+    </button>
+  </view>
+
+  <!-- 难度选择 -->
+  <view class="card difficulty-card">
+    <text class="section-title">AI 难度</text>
+    <view class="difficulty-row">
+      <view class="diff-item {{aiDepth === 2 ? 'active' : ''}}" bindtap="setDepth" data-depth="2">
+        <text>简单</text>
+      </view>
+      <view class="diff-item {{aiDepth === 3 ? 'active' : ''}}" bindtap="setDepth" data-depth="3">
+        <text>普通</text>
+      </view>
+      <view class="diff-item {{aiDepth === 4 ? 'active' : ''}}" bindtap="setDepth" data-depth="4">
+        <text>困难</text>
+      </view>
+      <view class="diff-item {{aiDepth === 5 ? 'active' : ''}}" bindtap="setDepth" data-depth="5">
+        <text>大师</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 连接状态 -->
+  <view class="status-bar">
+    <text class="status-dot {{isConnected ? 'online' : 'offline'}}"></text>
+    <text>服务器: {{isConnected ? '已连接' : '未连接'}}</text>
+  </view>
+</view>

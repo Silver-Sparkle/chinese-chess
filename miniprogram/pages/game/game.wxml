@@ -1,0 +1,67 @@
+<!-- 对局页面 -->
+<view class="game-container">
+  <!-- 顶部信息栏 -->
+  <view class="top-bar">
+    <view class="player-info opponent">
+      <text class="player-color {{opponentColor}}">{{opponentName}}</text>
+      <text class="player-label">{{opponentLabel}}</text>
+    </view>
+    <view class="game-status">
+      <text class="status-text">{{statusText}}</text>
+    </view>
+  </view>
+
+  <!-- 棋盘 Canvas -->
+  <view class="board-wrapper">
+    <canvas
+      type="2d"
+      id="chessCanvas"
+      class="chess-canvas"
+      bindtouchstart="onTouchStart"
+      bindtouchmove="onTouchMove"
+      bindtouchend="onTouchEnd"
+    ></canvas>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <view class="player-info self">
+      <text class="player-color {{playerColor}}">{{playerName}}</text>
+      <text class="player-label">{{playerLabel}}</text>
+    </view>
+
+    <view class="action-buttons">
+      <button class="btn-small btn-undo" bindtap="undoMove" disabled="{{!canUndo}}">
+        悔棋
+      </button>
+      <button class="btn-small btn-new" bindtap="newGame">
+        新局
+      </button>
+      <button class="btn-small btn-surrender" bindtap="surrender">
+        认输
+      </button>
+    </view>
+  </view>
+
+  <!-- 走法日志 -->
+  <view class="move-log" wx:if="{{moveLog.length > 0}}">
+    <text class="log-title">走法记录</text>
+    <scroll-view scroll-y class="log-list">
+      <view wx:for="{{moveLog}}" wx:key="index" class="log-item">
+        <text class="log-num">{{index + 1}}.</text>
+        <text class="log-move">{{item}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 对局结束弹窗 -->
+  <view class="modal-overlay" wx:if="{{showResult}}">
+    <view class="modal-card">
+      <text class="result-icon">{{resultIcon}}</text>
+      <text class="result-title">{{resultTitle}}</text>
+      <text class="result-reason">{{resultReason}}</text>
+      <button class="btn btn-primary" bindtap="newGame">再来一局</button>
+      <button class="btn btn-secondary" bindtap="backToHome">返回首页</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# 微信小程序
+miniprogram/node_modules/
+
+# 云托管
+backend/__pycache__/

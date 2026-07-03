@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/game/game",
+    "pages/room/room",
+    "pages/history/history"
+  ],
+  "window": {
+    "navigationBarTitleText": "中国象棋",
+    "navigationBarBackgroundColor": "#8B4513",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5E6D3",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#8B4513",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "🏠 首页"
+      },
+      {
+        "pagePath": "pages/room/room",
+        "text": "⚔️ 对战"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "📋 记录"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

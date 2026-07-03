@@ -1,0 +1,31 @@
+# 微信云托管配置文件
+# 云托管会自动读取此文件
+
+# 服务名称
+name: chinese-chess
+
+# 容器配置
+container:
+  # 端口（与 Dockerfile 中的 EXPOSE 一致）
+  port: 80
+  # 最小副本数
+  minReplicas: 1
+  # 最大副本数
+  maxReplicas: 3
+  # CPU 核数
+  cpu: 1
+  # 内存 (GB)
+  memory: 2
+
+# 环境变量
+env:
+  - name: AI_MAX_DEPTH
+    value: "4"
+  - name: AI_TIME_LIMIT
+    value: "2.0"
+  - name: DEBUG
+    value: "false"
+
+# 自动扩缩容 (CPU 使用率 > 60% 扩容)
+autoscaling:
+  targetCPUUtilizationPercentage: 60

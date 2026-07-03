@@ -1,0 +1,77 @@
+/* app.wxss — 全局样式 */
+page {
+  background-color: #F5E6D3;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 通用容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 通用按钮 */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  border: none;
+  margin: 16rpx 0;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #8B4513;
+  border: 2rpx solid #8B4513;
+}
+
+.btn-danger {
+  background: #c0392b;
+  color: #fff;
+}
+
+.btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+/* 卡片 */
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin: 20rpx 0;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.08);
+}
+
+/* 标题 */
+.title {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #8B4513;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 8rpx;
+}
